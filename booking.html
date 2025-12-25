@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Book Your Ride | Sunita Tours & Travels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/booking.css">
+   <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <div class="booking-page">
+    <div class="booking-card">
+
+      <h2>Book Your Ride</h2>
+      <p class="subtitle">
+        Please review your trip details and confirm your booking
+      </p>
+
+      <form id="bookingForm">
+
+        <label>Pickup Location</label>
+        <input type="text" id="pickup" required>
+
+        <label>Destination</label>
+        <input type="text" id="destination" required>
+
+        <label>Journey Date</label>
+        <input type="date" id="date" required>
+
+        <label>Vehicle Type</label>
+        <input type="text" id="vehicle" readonly>
+
+        <label>Passenger Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="Enter your mobile number" required>
+
+        <label class="checkbox-line">
+          <input type="checkbox" required>
+          I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>
+        </label>
+
+        <button type="submit">Confirm Booking</button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+
+  <!-- AUTO-FILL FROM HOME PAGE -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById("pickup").value = params.get("pickup") || "";
+    document.getElementById("destination").value = params.get("destination") || "";
+    document.getElementById("date").value = params.get("date") || "";
+    document.getElementById("vehicle").value = params.get("vehicle") || "";
+  </script>
+
+</body>
+</html>

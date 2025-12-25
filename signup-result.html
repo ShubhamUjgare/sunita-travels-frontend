@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="signup-result.css">
+</head>
+<body>
+  <div class="container">
+    <div id="success" class="card success">
+      <span>✔</span>
+      <h3>Completed</h3>
+      <p>Success! Your account has been created!</p>
+      <a href="login.html">Go to Dashboard</a>
+    </div>
+
+    <div id="error" class="card error">
+      <span>✖</span>
+      <h3>Failed</h3>
+      <p>Email already in use.</p>
+      <a href="signup.html">Try again</a>
+    </div>
+  </div>
+  <script src="config.js"></script>
+
+  <script>
+    const status = new URLSearchParams(window.location.search).get("status");
+    if (status === "success") {
+      document.getElementById("success").style.display = "block";
+    } else {
+      document.getElementById("error").style.display = "block";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* ABOUT SECTION */
+.about-section {
+  background: #f8fafc;
+  padding: 70px 20px;
+  margin-top: 60px;
+
+}
+
+.about-title {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  color: #065f46;
+  margin-bottom: 45px;
+  font-weight: 600;
+  
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.about-card {
+  background: #ffffff;
+  padding: 28px 22px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 2px solid #10b981;
+  background: #ecfdf5;
+  transform: translateY(-8px);
+}
+
+.about-card h3 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  color: #065f46;
+}
+
+.about-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* Highlight middle card (Our Services) */
+.about-card.highlight {
+  border: 2px solid #10b981;
+  background: #ecfdf5;
+  transform: translateY(-8px);
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .about-card.highlight {
+    transform: none;
+  }
+}

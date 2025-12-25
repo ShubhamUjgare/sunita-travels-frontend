@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI";
+  background: #f4f4f4;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: #f7f7f7;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.user-icon {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background: #e0f5e9;
+  color: #1db954;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+.content h2 {
+  margin-bottom: 10px;
+}
+
+.tab {
+  color: red;
+  text-decoration: underline;
+  margin-bottom: 30px;
+}
+
+/* TRIP CARD */
+.trip-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.trip-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.trip-row:last-child {
+  border-bottom: none;
+}
+
+/* ===============================
+   DASHBOARD RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .user-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 20px;
+  }
+}

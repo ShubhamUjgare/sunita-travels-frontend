@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Choose Ride</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/choose-ride.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="config.js"></script>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<div class="page">
+  <h2>Choose a ride</h2>
+
+  <div id="map"></div>
+  <p class="distance-info">Distance: <b id="dist"></b> km</p>
+
+  <!-- RIDE OPTIONS -->
+
+  <div class="ride-card active" data-name="COMPACT SEDAN">
+    <span>
+      COMPACT SEDAN
+      <h5>Maruti Suzuki Dzire</h5>
+    </span>
+  </div>
+
+  <div class="ride-card" data-name="LARGE SEDAN">
+    <span>
+      LARGE SEDAN
+      <h5>Toyota Innova Crysta</h5>
+    </span>
+  </div>
+
+  <div class="ride-card" data-name="MUV">
+    <span>
+      MUV
+      <h5>Maruti Suzuki Ertiga (White)</h5>
+    </span>
+  </div>
+
+  <div class="ride-card" data-name="MUV">
+    <span>
+      MUV
+      <h5>Maruti Suzuki Ertiga (Grey)</h5>
+    </span>
+  </div>
+
+  <button id="confirmBtn">Book Selected Ride</button>
+</div>
+
+<!-- EXTERNAL SCRIPT -->
+<script src="js/choose-ride.js"></script>
+
+</body>
+</html>

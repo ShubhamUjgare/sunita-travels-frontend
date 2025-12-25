@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #74c365, #e8f5e9);
+}
+
+/* PAGE */
+.booking-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CARD */
+.booking-card {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+/* TEXT */
+.booking-card h2 {
+  text-align: center;
+  color: #018749;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* FORM */
+.booking-card label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.booking-card input {
+  width: 100%;
+  padding: 11px 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.booking-card input:focus {
+  outline: none;
+  border-color: #74c365;
+}
+
+/* CHECKBOX */
+.checkbox-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  margin: 12px 0 20px;
+}
+
+.checkbox-line a {
+  color: #018749;
+  text-decoration: underline;
+}
+
+.checkbox-line a:hover {
+  color: #0d47a1;
+}
+
+/* BUTTON */
+.booking-card button {
+  width: 100%;
+  padding: 12px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-card button:hover {
+  background: #e68900;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .booking-card {
+    padding: 25px 20px;
+  }
+
+  .booking-card h2 {
+    font-size: 20px;
+  }
+}

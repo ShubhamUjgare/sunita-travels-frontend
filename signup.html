@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Signup | Sunita Tours & Travels</title>
+  <link rel="stylesheet" href="css/signup.css">
+   <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <div class="auth-page">
+    <div class="auth-wrapper">
+
+      <!-- LEFT PANEL -->
+      <div class="left-panel">
+        <div class="left-content">
+          <h2>Welcome to<br>Sunita Tours & Travels!</h2>
+          <p>
+            By creating an account you’ll enjoy personalized travel
+            and exclusive offers.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="right-panel">
+        <form class="auth-form" id="signupForm">
+          <h2>Create your account</h2>
+
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your full name" required id="name">
+
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" required id="email">
+
+          <label>Password</label>
+          <input type="password" placeholder="Create a password" required id="password">
+
+          <label>Mobile Number</label>
+          <input type="text" placeholder="Enter your mobile number" id="phone">
+
+          <label class="checkbox-line">
+            <input type="checkbox" required>
+            I accept <a href="terms.html">Terms and Conditions</a>
+          </label>
+
+          <button type="submit">Create Account</button>
+
+          <p class="login-text">
+            Already have an account?
+            <a href="login.html">Login</a>
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <script src="config.js"></script>
+
+  <script src="/frontend/js/signup.js"></script>
+</body>
+</html>

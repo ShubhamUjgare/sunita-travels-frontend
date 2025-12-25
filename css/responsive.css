@@ -1,0 +1,169 @@
+/* ===============================
+   GLOBAL MOBILE FIX
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   HAMBURGER BUTTON
+================================ */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background: #000;
+  transition: 0.3s;
+}
+
+/* ===============================
+   MOBILE HEADER
+================================ */
+@media (max-width: 768px) {
+
+  header {
+    padding: 10px 16px;
+    justify-content: space-between;
+  }
+
+  header img {
+    width: 120px;
+  }
+
+  /* Hide desktop menu */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  /* Show menu when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Hide desktop spacing */
+  .outer {
+    margin: 0;
+  }
+
+  /* Signup + hamburger alignment */
+  header .signup {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Show hamburger ONLY on mobile */
+  .hamburger {
+    display: block;
+  }
+}
+
+/*=====================================================
+   SEARCH BAR (CRITICAL FIX)
+===================================================== */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .location-group {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .swap-icon {
+    margin: 0 auto;
+  }
+
+  .search-field {
+    width: 100%;
+  }
+
+  .search-field input,
+  .search-field select {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .search-btn button {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px;
+  }
+}
+
+/* ===============================
+   AUTH PAGES (LOGIN / SIGNUP)
+================================ */
+@media (max-width: 768px) {
+
+  .auth-body {
+    min-width: 100%;
+    height: auto;
+  }
+
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-left,
+  .auth-right {
+    width: 100%;
+  }
+
+  .auth-left {
+    min-height: 220px;
+  }
+
+  .auth-form {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* ===============================
+   CARS GRID MOBILE
+================================ */
+@media (max-width: 600px) {
+  .car-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   POPULAR PLACES MOBILE
+================================ */
+@media (max-width: 600px) {
+  .places-grid {
+    grid-template-columns: 1fr;
+  }
+}

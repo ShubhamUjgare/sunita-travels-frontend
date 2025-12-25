@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: BlinkMacSystemFont, "Segoe UI", sans-serif
+  
+}
+
+
+/* signup page */
+
+/* PAGE BACKGROUND */
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #74c365, #e8f5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MAIN CONTAINER */
+.auth-wrapper {
+  width: 900px;
+  height: 600px;
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 40%;
+  background: url("../images/signupLeftPanel.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.left-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.left-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  color: white;
+  z-index: 1;
+}
+
+.left-content h2 {
+  font-size: 25px;
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+
+.left-content p {
+  font-size: 15px;
+  opacity: 0.95;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FORM */
+.auth-form {
+  width: 100%;
+  max-width: 380px;
+  margin: 20px 20px 20px 20px;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #018749;
+}
+
+.auth-form label {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 11px 12px;
+  margin-bottom: 14px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #74c365;
+}
+
+/* CHECKBOX */
+.checkbox-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  margin: 12px 0 20px;
+}
+
+.checkbox-line a {
+  color: #1DB954;
+  text-decoration: underline;
+}
+
+.checkbox-line a:hover {
+  color: #0d47a1;
+}
+
+/* BUTTON */
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-form button:hover {
+  background: #0d47a1;
+}
+
+/* LOGIN TEXT */
+.login-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-text a {
+  color: #018749;
+  font-weight: 600;
+}

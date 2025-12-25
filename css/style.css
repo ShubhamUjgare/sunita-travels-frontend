@@ -1,0 +1,545 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: BlinkMacSystemFont, "Segoe UI", sans-serif
+  
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #74c365, #e8f5e9);
+}
+
+/* HEADER */
+header {
+  background: white;
+  min-height: 50px;
+  color: black;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+}
+
+header img{
+    display: inline;
+    width: 15%;
+}
+
+.outer{
+  width: 60%;
+  display: flex;
+}
+.outer a {
+  color: black;
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+header .outer a :hover{
+  text-decoration: underline black;
+}
+header .outer{
+  justify-content: space-evenly;
+  margin: 0% 10%;
+
+}
+
+header .signup{
+  display: flex;
+    justify-self: flex-end;
+    width: 15%;
+  
+    
+}
+header .signup a button{
+    color: #26664b;
+    background-color: transparent;
+    padding: 10px 18px 10px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    
+}
+
+.signup button:hover{
+  background-color: #018749;
+  color: white;
+  border: none;
+}
+
+
+/* DROPDOWN */
+.dropdown {
+  display: inline-block;
+  
+}
+
+.dropbtn {
+  background: none;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.dropbtn i{
+  margin-right: 5px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* HERO */
+.hero {
+  background: url("../images/hero_image2.jpg") center/cover no-repeat;
+  height: 55vh;
+  width: auto;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
+  margin-top: 0px;
+  
+}
+
+.hero h1 {
+  font-size: 45px;
+}
+
+.main-btn {
+  padding: 15px 30px;
+  font-size: 12px;
+  background: orange;
+  border: none;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+/* SEARCH BAR SECTION */
+.search-bar-section {
+  position: relative;
+  margin-top: -60px;
+  padding: 0 20px;
+  z-index: 5;
+}
+
+
+/* MAIN BAR */
+.search-bar {
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  padding: 22px;
+  border-radius: 18px;
+  display: flex;
+  align-items: flex-end;
+  gap: 45px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* FIELD */
+.search-field {
+  flex: 1;
+}
+
+.search-field label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+
+.search-field input,
+.search-field select {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  gap: 14px;
+}
+
+
+.search-field input:focus,
+.search-field select:focus {
+  outline: none;
+  border-color: #74c365;
+}
+
+.location-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex: 2; /* takes more space than other fields */
+}
+
+
+
+/* Suggestions dropdown */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  z-index: 999;
+  max-height: 260px;
+  overflow-y: auto;
+  display: none;
+}
+
+/* Suggestion item */
+.suggestion-item {
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item i {
+  color: #0d47a1;
+}
+
+.suggestion-item:hover {
+  background: #f4f6f8;
+}
+
+/* Ensure parent is relative */
+.search-field {
+  position: relative;
+}
+
+
+/* swap icon */
+.swap-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f4f6f8;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 30px;
+}
+
+.swap-icon i {
+  font-size: 16px;
+  color: #0d47a1;
+}
+
+.swap-icon:hover {
+  background: #0d47a1;
+}
+
+.swap-icon:hover i {
+  color: #fff;
+}
+
+/* BUTTON */
+.search-btn button {
+  padding: 13px 26px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.search-btn button:hover {
+  background: #e68900;
+}
+
+/* RESPONSIVE FIX */
+@media (max-width: 1000px) {
+  .search-bar {
+    flex-wrap: wrap;
+  }
+
+  .swap-icon {
+    order: 3;
+    margin: 10px auto 0;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  .search-btn button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .search-bar-section {
+    margin-top: -40px;
+  }
+}
+
+
+/* CARS */
+.cars {
+  padding: 40px;
+  text-align: center;
+
+}
+
+.cars h2{
+  font-size: 32px;
+  color: #018749;
+  margin-bottom: 20px;
+}
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  border-radius: 15px;
+}
+
+.car-card {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.car-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.car-card button {
+  background: #018749;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+
+}
+
+/* AUTH */
+.auth-body {
+  background: linear-gradient(to right, #0d47a1, #1976d2);
+  height: 100vh;
+  min-width: 800px;
+}
+
+.auth-form {
+  background: white;
+  max-width: 250px;
+  margin: 0px 50px 0px 50px;
+  padding: 10px 10px 5px 0px;
+  border-radius: 5px;
+}
+
+.auth-form .signup{
+    padding: 20px 50px 10px 20px;
+}
+
+
+
+.auth-form input, .auth-form button {
+  width: 50%;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+
+footer {
+  background: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* =========================
+   POPULAR PLACES SECTION
+========================= */
+
+.popular-places {
+  padding: 70px 20px;
+  background: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  color: #1DB954;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 45px;
+}
+
+/* GRID */
+.places-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.place-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 220px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.place-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.place-card:hover img {
+  transform: scale(1.08);
+}
+
+/* OVERLAY */
+.place-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.1)
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 18px;
+  color: white;
+}
+
+.place-overlay h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* BADGE */
+.badge {
+  background: #1DB954;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .place-card {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .place-card {
+    height: 180px;
+  }
+
+  .place-overlay h3 {
+    font-size: 18px;
+  }
+}
+
+
+/* ===============================
+   CAR CARD HOVER EFFECT
+================================ */
+
+.car-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Scale & shadow on hover */
+.car-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* EXTRA DETAILS LAYER */
+.car-card::after {
+  content: attr(data-details);
+  position: absolute;
+  bottom: -120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  font-size: 20px;
+  padding: 20;
+  white-space: pre-line;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: bottom 0.4s ease;
+  
+}
+
+/* Slide details up */
+.car-card:hover::after {
+  bottom: 0;
+  
+}
+
+/* MOBILE SAFE */
+@media (max-width: 768px) {
+  .car-card:hover {
+    transform: none;
+  }
+
+  .car-card::after {
+    display: none;
+  }
+}
+

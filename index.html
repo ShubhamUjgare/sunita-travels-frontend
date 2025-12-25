@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Sunita Tours & Travels</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about-us.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="/frontend/images/Logo.jpg" alt="Sunita">
+
+    <div class="outer nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Contact us <i><i class="fa-solid fa-caret-down"></i></i></button>
+            <div class="dropdown-content">
+                <a href="tel:+918796309328">📞 Call</a>
+                <a href="https://wa.me/8850814933" target="_blank">💬 WhatsApp</a>
+            </div>
+        </div>
+
+        <a href="#about-us">About Us</a>
+        <a href="my-trips.html">My Trips<i class="fa-solid fa-cart-flatbed-suitcase"></i></a>
+        <div class="profile"><a href="my-profile.html"><i class="fa-solid fa-user"></i></a></div> 
+        <button id="logoutBtn" onclick="logout()" style="display:none">LOGOUT</button>
+    </div>
+
+    
+  </div>
+    <div class="signup">
+        <a href="login.html"><button>LOGIN</button></a>
+        <a href="signup.html"><button>SIGN UP</button></a>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Comfortable & Affordable Travel</h1>
+  <p>Safe journeys across Maharashtra & India</p>
+  <a href="#places"><button class="main-btn">EXPLORE MORE</button></a>
+</section>
+
+<!-- SEARCH / BOOKING BAR -->
+<section class="search-bar-section">
+  <form class="search-bar" id="searchForm">
+
+    <div class="location-group">
+
+      <!-- PICKUP -->
+      <div class="search-field pickup-field">
+        <label>Pickup</label>
+        <input type="text" id="pickup" name = "pickup" placeholder="Enter pickup location" autocomplete="off">
+        <div class="suggestions" id="pickupSuggestions"></div>
+      </div>
+      
+      <div class="swap-icon" id="swapBtn">
+        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+      </div>
+
+      <!-- DESTINATION -->
+      <div class="search-field">
+        <label>Destination</label>
+        <input type="text" id="destination" name="destination" placeholder="Enter destination" autocomplete="off">
+        <div class="suggestions" id="destinationSuggestions"></div>
+      </div>
+
+    </div>
+
+
+    <!-- DATE -->
+    <div class="search-field">
+      <label>Date</label>
+      <input type="date" name="date" required>
+    </div>
+
+    <!-- JOURNEY TYPE -->
+    <div class="search-field">
+      <label>Journey Type</label>
+      <select name="journeyType" required>
+        <option value="">Select journey type</option>
+        <option value="One Way">One Way (Only Drop)</option>
+        <option value="Two Way">Two Way (Drop & Return)</option>
+      </select>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="search-btn">
+      <button type="submit">Book Now</button>
+    </div>
+
+  </form>
+</section>
+
+
+
+<!-- AVAILABLE CARS -->
+<section id="cars" class="cars">
+  <h2>---Available Cars---</h2>
+
+  <div class="car-grid">
+    <div class="car-card" data-details="Maruti Suzuki Ertiga Diesel AC MH46BU7698">
+      <img src="images/ertigaGrey.avif">
+      <h3>Maruti Suzuki Ertiga</h3>
+      <p>7 Seater • AC (Grey)</p>
+      
+    </div>
+
+    <div class="car-card" data-details="Toyota Innovav Crysta Diesel AC MH47BL7272">
+      <img src="images/innovaWhite.avif">
+      <h3>Toyota Innova</h3>
+      <p>7 Seater • AC</p>
+      
+    </div>
+
+    <div class="car-card" data-details="Maruti Suzuki Ertiga Diesel AC MH45AE1333">
+      <img src="images/ertigaWhite.avif">
+      <h3>Maruti Suzuki Ertiga</h3>
+      <p>7 Seater • AC (White)</p>
+      
+    </div>
+
+    <div class="car-card" data-details="Maruti Suzuki Dzire Diesel AC MH05EL7810">
+      <img src="images/marutiSuzuki.jpg">
+      <h3>Maruti Suzuki Dzire</h3>
+      <p>4 Seater • AC</p>
+      
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR PLACES SECTION -->
+<section class="popular-places" id="places">
+
+  <h2 class="section-title">Popular Places</h2>
+  <p class="section-subtitle">
+    Get the most awesome tours and travels in India at eye-popping deals
+    and unbeatable discounts with our customer-friendly packages and pricing.
+  </p>
+
+  <div class="places-grid">
+
+    <!-- PLACE 1 -->
+    <div class="place-card">
+      <img src="images/mumbai.jpg" alt="Mumbai">
+      <div class="place-overlay">
+        <h3>Mumbai</h3>
+        <span class="badge">07 Places</span>
+      </div>
+    </div>
+
+    <!-- PLACE 2 -->
+    <div class="place-card">
+      <img src="images/pune.jpg" alt="Pune">
+      <div class="place-overlay">
+        <h3>Pune</h3>
+        <span class="badge">05 Places</span>
+      </div>
+    </div>
+
+    <!-- PLACE 3 -->
+    <div class="place-card">
+      <img src="images/shirdi.jpg" alt="Shirdi">
+      <div class="place-overlay">
+        <h3>Shirdi</h3>
+        <span class="badge">02 Places</span>
+      </div>
+    </div>
+
+    <!-- PLACE 4 -->
+    <div class="place-card">
+      <img src="images/mahabaleshwar.jpg" alt="Mahabaleshwar">
+      <div class="place-overlay">
+        <h3>Mahabaleshwar</h3>
+        <span class="badge">04 Places</span>
+      </div>
+    </div>
+
+    <!-- PLACE 5 -->
+    <div class="place-card">
+      <img src="images/goa.jpg" alt="Goa">
+      <div class="place-overlay">
+        <h3>Goa</h3>
+        <span class="badge">06 Places</span>
+      </div>
+    </div>
+
+    
+
+   <!-- 6 -->
+    <div class="place-card">
+      <img src="images/lonavala.jpg" alt="Lonavala">
+      <div class="place-overlay">
+        <h3>Lonavala</h3>
+        <span class="badge">04 Places</span>
+      </div>
+    </div>
+
+  <!-- 7 -->
+  <div class="place-card">
+    <img src="images/alibaug.jpg" alt="Alibaug">
+    <div class="place-overlay">
+      <h3>Alibaug</h3>
+      <span class="badge">05 Places</span>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="place-card">
+    <img src="images/kolhapur.jpg" alt="Kolhapur">
+    <div class="place-overlay">
+      <h3>Kolhapur</h3>
+      <span class="badge">03 Places</span>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="place-card">
+    <img src="images/kokan.jpg" alt="Kokan">
+    <div class="place-overlay">
+      <h3>Kokan</h3>
+      <span class="badge">04 Places</span>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="place-card">
+    <img src="images/ganpatipule.jpg" alt="Ganpatipule">
+    <div class="place-overlay">
+      <h3>Ganpatipule</h3>
+      <span class="badge">06 Places</span>
+    </div>
+  </div>
+
+  <!-- 11 -->
+  <div class="place-card">
+    <img src="images/karnataka.jpg" alt="Karnataka">
+    <div class="place-overlay">
+      <h3>Karnataka</h3>
+      <span class="badge">06 Places</span>
+    </div>
+  </div>
+
+  <!-- 12 -->
+  <div class="place-card">
+    <img src="images/satara.jpg" alt="Satara">
+    <div class="place-overlay">
+      <h3>Satara</h3>
+      <span class="badge">06 Places</span>
+    </div>
+  </div>
+
+  <!-- 13 -->
+  <div class="place-card">
+    <img src="images/bhimashankar.jpg" alt="Bhimashankar">
+    <div class="place-overlay">
+      <h3>Bhimashankar</h3>
+      <span class="badge">06 Places</span>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section" id="about-us">
+
+  <h2 class="about-title">ABOUT SUNITA TOURS AND TRAVELS</h2>
+
+  <div class="about-container">
+
+    <!-- OUR JOURNEY -->
+    <div class="about-card">
+      <h3>OUR JOURNEY</h3>
+      <p>
+        We started Sunita Tours and Travels with a simple goal –
+        to provide safe, comfortable, and reliable travel services.
+        What began with a single vehicle has grown into a trusted
+        travel service built on punctuality, transparency,
+        and customer satisfaction.
+      </p>
+    </div>
+
+    <!-- OUR SERVICES (HIGHLIGHTED) -->
+    <div class="about-card highlight">
+      <h3>OUR SERVICES</h3>
+      <p>
+        At Sunita Tours and Travels, we offer a wide range of travel
+        services to make every journey smooth and stress-free.
+        From local city rides and airport transfers to long-distance
+        outstation trips, we ensure comfort, safety, and affordability.
+      </p>
+    </div>
+
+    <!-- OUR DESTINATIONS -->
+    <div class="about-card">
+      <h3>OUR TRAVEL DESTINATIONS</h3>
+      <p>
+        We provide travel services across Maharashtra and India.
+        Our popular destinations include Pune, Mumbai, Nashik,
+        Shirdi, Aurangabad (Chhatrapati Sambhajinagar),
+        Kolhapur, Goa, Hyderabad, and many more cities.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p>© 2025 Sunita Tours & Travels</p>
+</footer>
+<script src="config.js"></script>
+
+<script src="js/osrm.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

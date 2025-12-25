@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Booking Confirmed</title>
+  <link rel="stylesheet" href="css/confirm-booking.css">
+   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- jsPDF for PDF download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<div class="box" id="bookingBox">
+  <h2 class="success">✅ Booking Confirmed</h2>
+  <p class="sub-text">
+    Thank you! Your ride has been successfully booked.We will contact you for further.
+  </p>
+
+  <div class="details">
+    <p><span>Ride Type</span><b id="ride"></b></p>
+    <!-- <p><span>Vehicle Number</span><b id="vehicle number"></b></p> -->
+    <p><span>Pickup</span><b id="pickup"></b></p>
+    <p><span>Destination</span><b id="destination"></b></p>
+    <p><span>Distance</span><b><span id="distance"></span> km</b></p>
+    <!-- <p><span>Total Fare</span><b>₹ <span id="price"></span></b></p> -->
+    <p><span>Booking ID</span><b id="bookingId"></b></p>
+  </div>
+
+  <button onclick="downloadPDF()">⬇ Download Booking PDF</button>
+  <button id="confirmBookingBtn">Confirm Booking</button>
+
+  <div class="actions">
+    <button onclick="viewMyBooking()">View My Booking</button>
+    <a href="my-trips.html"><button onclick="manageBooking()">Manage Booking</button></a>
+    
+  </div>
+</div>
+<script src="config.js"></script>
+
+<script>
+/************************************
+ READ QUERY PARAMETERS
+*************************************/
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("ride").innerText = params.get("ride") || "-";
+// document.getElementById("price").innerText = params.get("price") || "-";
+document.getElementById("pickup").innerText = params.get("pickup") || "-";
+document.getElementById("destination").innerText = params.get("destination") || "-";
+document.getElementById("distance").innerText = params.get("distance") || "-";
+
+/************************************
+ GENERATE BOOKING ID
+*************************************/
+const bookingId = "STT" + Math.floor(100000 + Math.random() * 900000);
+document.getElementById("bookingId").innerText = bookingId;
+
+/************************************
+ DOWNLOAD PDF
+*************************************/
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.setFontSize(16);
+  doc.text("Sunita Tours & Travels", 20, 20);
+
+  doc.setFontSize(12);
+  doc.text("Booking Confirmation", 20, 30);
+
+  doc.text(`Booking ID: ${bookingId}`, 20, 45);
+  doc.text(`Ride Type: ${params.get("ride")}`, 20, 55);
+  doc.text(`Pickup: ${params.get("pickup")}`, 20, 65);
+  doc.text(`Destination: ${params.get("destination")}`, 20, 75);
+  doc.text(`Distance: ${params.get("distance")} km`, 20, 85);
+  // doc.text(`Total Fare: ₹${params.get("price")}`, 20, 95);
+  // doc.text(`Vehicle Number:${}`);
+
+  doc.text("Thank you for choosing Sunita Tours & Travels.", 20, 115);
+
+  doc.save(`Booking_${bookingId}.pdf`);
+}
+
+function viewMyBooking() {
+  window.location.href = "my-trips.html";
+}
+</script>
+
+</body>
+</html>
