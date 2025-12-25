@@ -66,11 +66,33 @@ document.querySelectorAll(".ride-card").forEach(card => {
 });
 
 /************************************
- CONFIRM BOOKING → CONFIRM PAGE
+ CONFIRM BOOKING → LOGIN CHECK → CONFIRM PAGE
 *************************************/
 confirmBtn.addEventListener("click", () => {
   if (!selectedCard) return;
 
+  const token = localStorage.getItem("token");
+
+  // Prepare booking data
+  const bookingData = {
+    ride: selectedCard.dataset.name,
+    pickup,
+    destination,
+    distance,
+    journeyType
+  };
+
+  // Save booking temporarily
+  localStorage.setItem("pendingBooking", JSON.stringify(bookingData));
+
+  if (!token) {
+    // User not logged in → redirect to login
+    window.location.href = "login.html?redirect=confirm-booking.html";
+    return;
+  }
+
+  // User logged in → proceed
   window.location.href =
     `confirm-booking.html?ride=${encodeURIComponent(selectedCard.dataset.name)}&pickup=${encodeURIComponent(pickup)}&destination=${encodeURIComponent(destination)}&distance=${distance}&journeyType=${encodeURIComponent(journeyType)}`;
 });
+
