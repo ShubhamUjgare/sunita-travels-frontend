@@ -25,7 +25,7 @@ signupForm.addEventListener("submit", async (e) => {
         name,
         email,
         password,
-        mobile,
+        phone:mobile,
         city
       })
     });
