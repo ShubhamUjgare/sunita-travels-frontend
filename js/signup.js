@@ -4,14 +4,13 @@ signupForm.addEventListener("submit", async (e) => {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
-  const mobile = document.getElementById("mobile").value.trim();
-  const city = document.getElementById("city").value.trim();
+  const phone = document.getElementById("phone").value.trim();
 
   statusContainer.innerHTML = "";
   statusContainer.style.display = "none";
 
   // ✅ Basic client validation
-  if (!name || !email || !password || !mobile || !city) {
+  if (!name || !email || !password || !phone) {
     showStatus("failed", "Please fill all required fields.");
     return;
   }
@@ -24,8 +23,7 @@ signupForm.addEventListener("submit", async (e) => {
         name,
         email,
         password,
-        phone: mobile,
-        city
+        phone,
       })
     });
 
