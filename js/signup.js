@@ -1,9 +1,3 @@
-// signup.js
-// Depends on config.js -> API_BASE_URL
-
-const signupForm = document.getElementById("signupForm");
-const statusContainer = document.getElementById("signupStatus");
-
 signupForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -13,9 +7,14 @@ signupForm.addEventListener("submit", async (e) => {
   const mobile = document.getElementById("mobile").value.trim();
   const city = document.getElementById("city").value.trim();
 
-  // Reset UI
   statusContainer.innerHTML = "";
   statusContainer.style.display = "none";
+
+  // ✅ Basic client validation
+  if (!name || !email || !password || !mobile || !city) {
+    showStatus("failed", "Please fill all required fields.");
+    return;
+  }
 
   try {
     const res = await fetch(`${API_BASE_URL}/api/auth/signup`, {
@@ -25,26 +24,24 @@ signupForm.addEventListener("submit", async (e) => {
         name,
         email,
         password,
-        phone:mobile,
+        phone: mobile,
         city
       })
     });
 
     const data = await res.json();
 
-    // ❌ EMAIL EXISTS
     if (res.status === 409) {
-      showStatus("failed", "Oops! We couldn’t create your account because your email is already in use.");
+      showStatus("failed", "Oops! Email already in use.");
       return;
     }
 
-    // ❌ OTHER ERROR
     if (!res.ok) {
-      showStatus("failed", data.message || "Signup failed. Try again.");
+      showStatus("failed", data.message || "Signup failed.");
       return;
     }
 
-    // ✅ SUCCESS
+    // ✅ Store auth
     localStorage.setItem("token", data.token);
     localStorage.setItem("user", JSON.stringify(data.user));
 
@@ -59,28 +56,3 @@ signupForm.addEventListener("submit", async (e) => {
     showStatus("failed", "Something went wrong. Please try again.");
   }
 });
-
-
-// ================= UI STATUS HANDLER =================
-
-function showStatus(type, message) {
-  statusContainer.style.display = "flex";
-
-  if (type === "success") {
-    statusContainer.innerHTML = `
-      <div class="status-card success">
-        <div class="icon">✔</div>
-        <h3>Completed</h3>
-        <p>${message}</p>
-      </div>
-    `;
-  } else {
-    statusContainer.innerHTML = `
-      <div class="status-card failed">
-        <div class="icon">✖</div>
-        <h3>Failed</h3>
-        <p>${message}</p>
-      </div>
-    `;
-  }
-}
