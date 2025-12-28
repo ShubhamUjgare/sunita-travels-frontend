@@ -1,4 +1,4 @@
-signupForm.addEventListener("submit", async (e) => {
+  signupForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
@@ -28,29 +28,34 @@ signupForm.addEventListener("submit", async (e) => {
     });
 
     const data = await res.json();
+    
+  // ❌ EMAIL EXISTS
+  if (res.status === 409) {
+    window.location.href = "signup-result.html?status=error";
+    return;
+  }
 
-    if (res.status === 409) {
-      showStatus("failed", "Oops! Email already in use.");
-      return;
-    }
+// ❌ OTHER ERRORS
+if (!res.ok) {
+  window.location.href = "signup-result.html?status=error";
+  return;
+}
 
-    if (!res.ok) {
-      showStatus("failed", data.message || "Signup failed.");
-      return;
-    }
 
     // ✅ Store auth
     localStorage.setItem("token", data.token);
     localStorage.setItem("user", JSON.stringify(data.user));
 
-    showStatus("success", "Success! Your account has been created.");
-
+    
+    // ✅ REDIRECT ONLY AFTER SUCCESS
+    window.location.href = "signup-result.html?status=success";
     setTimeout(() => {
       window.location.href = "login.html";
     }, 1500);
 
   } catch (err) {
-    console.error(err);
-    showStatus("failed", "Something went wrong. Please try again.");
+    window.location.href = "signup-result.html?status=error";
+    
   }
+    
 });
